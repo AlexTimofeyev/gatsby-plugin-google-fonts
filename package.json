@@ -1,0 +1,26 @@
+{
+  "name": "@slixites/gatsby-plugin-google-fonts",
+  "version": "1.0.0",
+  "description": "Performantly and Customizably Bring Google Fonts to Gatsby",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/slixites/gatsby-plugin-google-fonts.git"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "react",
+    "google",
+    "fonts"
+  ],
+  "author": "Dillon Streator",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/slixites/gatsby-plugin-google-fonts/issues"
+  },
+  "homepage": "https://github.com/slixites/gatsby-plugin-google-fonts#readme"
+}
