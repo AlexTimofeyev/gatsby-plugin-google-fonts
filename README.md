@@ -1,4 +1,5 @@
 # @slixites/gatsby-plugin-google-fonts
+[![Build Status](https://travis-ci.org/slixites/gatsby-plugin-google-fonts.svg?branch=master)](https://travis-ci.org/slixites/gatsby-plugin-google-fonts) [![Known Vulnerabilities](https://snyk.io/test/github/slixites/gatsby-plugin-google-fonts/badge.svg)](https://snyk.io/test/github/slixites/gatsby-plugin-google-fonts)
 
 ## How to use it ?
 
