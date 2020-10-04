@@ -12,7 +12,11 @@ exports.onRenderBody = (
   { setHeadComponents },
   { fonts = [], display, preconnect, attributes = {} }
 ) => {
-  if (!Array.isArray(fonts) || !fonts.length) {
+  if (
+    !Array.isArray(fonts) ||
+    !fonts.length ||
+    fonts.some((f) => typeof f !== "string")
+  ) {
     throw `'fonts' option is a required option and must be an array of strings`;
   }
 

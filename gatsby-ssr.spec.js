@@ -24,6 +24,13 @@ describe("onRenderBody", () => {
     expect(setHeadComponents.mock.calls.length).toBe(0);
   });
 
+  it("should error on incorrect font types", () => {
+    expect(() => onRenderBody({ setHeadComponents }, { fonts: [1] })).toThrow(
+      `'fonts' option is a required option and must be an array of strings`
+    );
+    expect(setHeadComponents.mock.calls.length).toBe(0);
+  });
+
   it("should error on non-array font type", () => {
     expect(() =>
       onRenderBody({ setHeadComponents }, { fonts: "Montserrat" })
