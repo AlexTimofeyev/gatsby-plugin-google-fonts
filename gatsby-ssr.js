@@ -1,7 +1,7 @@
 const _interopRequireDefault = (obj) =>
   obj && obj.__esModule ? obj : { default: obj };
 
-const _react = _interopRequireDefault(require("react"));
+const { default: _react } = _interopRequireDefault(require("react"));
 
 const capitalize = (str) => `${str[0].toUpperCase()}${str.slice(1)}`;
 const formatFont = (font) => font.split(" ").map(capitalize).join(" ");
@@ -10,30 +10,34 @@ const formatFonts = (fonts) =>
 
 exports.onRenderBody = (
   { setHeadComponents },
-  { fonts, display, preconnect, attributes = {} }
+  { fonts = [], display, preconnect, attributes = {} }
 ) => {
+  if (!Array.isArray(fonts) || !fonts.length) {
+    throw `'fonts' option is a required option and must be an array of strings`;
+  }
+
   let href = `https://fonts.googleapis.com/css?family=${formatFonts(fonts)}`;
   if (display) href += `&display=${display}`;
 
   const components = [
-    _react.default.createElement("link", {
-      href,
+    _react.createElement("link", {
       key: "fonts",
-      rel: "stylesheet",
-      type: "text/css",
       crossOrigin: preconnect ? "anonymous" : undefined,
+      rel: "stylesheet",
       ...attributes,
+      href,
+      type: "text/css",
     }),
   ];
   if (preconnect)
-    components.unshift([
-      _react.default.createElement("link", {
+    components.unshift(
+      _react.createElement("link", {
         key: "google-fonts-preconnect",
         rel: "preconnect",
         href: "https://fonts.gstatic.com/",
         crossOrigin: "anonymous",
-      }),
-    ]);
+      })
+    );
 
   setHeadComponents(components);
 };
