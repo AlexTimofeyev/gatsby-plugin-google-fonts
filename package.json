@@ -4,8 +4,7 @@
   "description": "Performantly and Customizably Bring Google Fonts to Gatsby",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "test:ci": "jest --coverage"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",

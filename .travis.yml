@@ -4,3 +4,11 @@ node_js:
 cache:
   directories:
     - "$HOME/.npm"
+
+jobs:
+  include:
+    - stage: test
+      script:
+        - npm test
+      after_success:
+        - bash <(curl -s https://codecov.io/bash)
