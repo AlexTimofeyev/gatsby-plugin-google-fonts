@@ -27,6 +27,7 @@ module.exports = {
         preconnect: true,
         attributes: {
             rel: 'stylesheet preload prefetch',
+            as: 'style',
         },
       },
     },
